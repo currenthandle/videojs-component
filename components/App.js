@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import Video from './Video'
+const videoJsOptions = {
+   autoPlay: true,
+   controls: true,
+   sources: [{
+     src: 'http://checkers-music.com/assets/video/precomp.mp4',
+     type: 'video/mp4'
+   }]
+ }
 
 export default class App extends Component {
   render() {
-    return (
-      <div>
-        <h1>This is the App Component</h1>
-        <Video/>
-      </div>
-    )
+    return <Video { ...videoJsOptions } />
+
   }
 }
